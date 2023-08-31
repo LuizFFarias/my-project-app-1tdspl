@@ -1,31 +1,23 @@
-import Cabecalho from "./compoentes/Cabecalho";
+
+import Secao from './compoentes/Secao'
+import Rodape from './compoentes/Rodape'
+import viteLogo from './assets/vite.svg'
+import Lista from './compoentes/Lista'
 
 
-export default function App() {
-  return (
+export default function App(){
 
-    
+  let viteAtl = 'Vite Logo'
+
+  let nomes = ['Leo','Yuuki','Santos'];
+
+  return(
     <>
-    <div className = "container">
-     
-     <Cabecalho/>
-      <section>
-    <h2>Vite + React</h2>
-    <p>Coded By - RM99519</p>
-    <div>
-      <p>Turma - 1TDSPL</p>
-      <p>FIAP</p>
-    </div>
-      </section>
-
-      <footer>
-        <a href="Github"></a>
-        <a href="Linkedin"></a>
-        <a href="Twitter"></a>
-      </footer>
-
-    </div>
+      <Lista />
+        <Secao  viteLogoProps={viteLogo} viteAtlProps={viteAtl} nomesProps={nomes}/>
+      <Rodape />
+      
     </>
+  );
 
-  )
 }
