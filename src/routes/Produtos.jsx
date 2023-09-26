@@ -4,6 +4,7 @@ import classes from "./Produtos.module.css";
 import {AiFillEdit as Editar} from "react-icons/ai";
 import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
 import { useEffect, useState } from "react";
+import ModalInserir from "../components/ModalInserir/ModalInserir";
 
 export default function Produtos() {
 
@@ -25,10 +26,18 @@ useEffect(() => {
 
   document.title = "Lista de Produtos: ";
 
+
+
+
+  const[opne, setOpen] = useState(false)
+
   return (
     <div>
       <h1>Produtos de INFORMÁTICA - FIPAPI</h1>
       <p>Os Melhores Produtos do Mercado</p>
+
+      {open ?<ModalInserir open= {true} setOpen={setOpen}/> : ""}
+      <button onClick={ () => setOpen = {true}}>OPEN-MODAL</button>
 
       <table className={classes.estilo}>
         <thead className={classes.tableHeaders}>
