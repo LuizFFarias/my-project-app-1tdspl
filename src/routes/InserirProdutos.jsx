@@ -22,11 +22,7 @@ export default function InserirProduto(){
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-       
-        setProdutoId(idProd)
-       const {id} = produto;
-       setProduto({...produto, [id]: idProd})
-        setProduto({...produto, ["id"]: idProd})
+
 
         ListaProdutos.push(produto);
 

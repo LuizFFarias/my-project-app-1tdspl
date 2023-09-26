@@ -8,23 +8,23 @@ import { useEffect, useState } from "react";
 export default function Produtos() {
 
 
-  const [counter, setCounter] = useState(0);
-  document.title = "Lista de Produtos: " + counter;
-//   useEffect(() => (
-//      console.log("Este useEffects renderiza sempre que ocorre alguma atualização no componente!")
-//   ));
-// const [listaProdutosLocal, setListaProduosLocal] = useState([{}]);
+  const {listaProdutoExterno, setListaProdutoExtero} = useState([{}]);
+useEffect(() => {
 
-//   useEffect(() => {
-//     console.log("Esse useEffect renderiza apenas uma vez no carregamento do componente!");
+  fetch("http://localhost: 5000/produtos",
+  method: "GET",
+  headers:{
+    "Content-Type" : "application/json"
+  }
+  )
+})
 
-//   },[]);
+   
 
-//   useEffect(() =>{
-//     console.log("Este useEfect renderiza apenas se o objeto/elemento/componente e ou variável sofrer uma alteração. Devemos colocar o item a ser monitorado no array de dependências: []");
 
-//   }, [counter2]);
-  
+
+  document.title = "Lista de Produtos: ";
+
   return (
     <div>
       <h1>Produtos de INFORMÁTICA - FIPAPI</h1>
